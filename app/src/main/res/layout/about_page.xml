@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="25dp"
+    android:background="@color/white">
+
+    <!-- Header Section (Same as dashboard) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/Icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_image"
+            android:contentDescription="@string/app_name"
+            android:clickable="true"
+            android:onClick="showHomePage" />
+
+        <LinearLayout
+            android:id="@+id/logoTextContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/Icon"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:onClick="showHomePage">
+
+            <TextView
+                android:id="@+id/mahubePharmacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mahube"
+                android:textColor="@color/button_blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pharmacy"
+                android:textColor="#7AB648"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="#64748B"
+            android:src="@drawable/account_circle"
+            android:contentDescription="Profile"
+            android:clickable="true"
+            android:onClick="showProfilePage"/>
+        <ImageView
+            android:id="@+id/CartIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@id/notificationIcon"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Cart"
+            android:clickable="true"
+            android:onClick="showCartPage"
+            app:tint="#64748B"
+            android:src="@drawable/shopping_cart" />
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@id/profileIcon"
+            android:src="@android:drawable/ic_popup_reminder"
+            app:tint="#64748B"
+            android:contentDescription="Notifications"
+            tools:ignore="UseAppTint" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- About Us Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/about_subtitle"
+                android:textColor="@color/secondary_textColor"
+                android:textSize="16sp" />
+
+            <!-- Illustration Banner -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="#EFF6FF">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="#BFDBFE"
+                        android:layout_marginEnd="15dp"
+                        android:contentDescription="Healthcare Icon"
+                        tools:ignore="UseAppTint" />
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="#BFDBFE"
+                        android:layout_marginEnd="15dp"
+                        android:contentDescription="Healthcare Icon"
+                        tools:ignore="UseAppTint" />
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="#BFDBFE"
+                        android:contentDescription="Healthcare Icon"
+                        tools:ignore="UseAppTint" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Welcome Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/welcome_title"
+                android:textColor="#0F172A"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/welcome_description"
+                android:textColor="@color/secondary_textColor"
+                android:textSize="15sp" />
+
+            <!-- Our Story Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="#F8FAFC"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#DBEAFE"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    app:tint="@color/button_blue"
+                    android:contentDescription="Story Icon"
+                    tools:ignore="UseAppTint" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/our_story_title"
+                        android:textColor="#0F172A"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/our_story_description"
+                        android:textColor="@color/secondary_textColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/nav_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:outlineAmbientShadowColor="@color/black">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home"
+            android:tint="@color/black"
+            android:onClick="showHomePage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Prescriptions"
+            android:src="@drawable/ic_prescriptions_item"
+            android:onClick="showUploadPresciptionPage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Cart"
+            android:src="@drawable/shopping_cart"
+            android:tint="@color/black"
+            android:onClick="showCartPage" />
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Consultation"
+            android:src="@drawable/ic_contact"
+            android:tint="@color/black"
+            android:onClick="showConsultationPage" />
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Profile"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/black"
+            android:onClick="showProfilePage" />
+    </LinearLayout>
+</LinearLayout>

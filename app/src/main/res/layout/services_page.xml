@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="25dp"
+    android:background="@color/white">
+
+    <!-- Header Section (Same as dashboard) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/Icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_image"
+            android:contentDescription="@string/app_name"
+            android:clickable="true"
+            android:onClick="showHomePage" />
+
+        <LinearLayout
+            android:id="@+id/logoTextContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/Icon"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:onClick="showHomePage">
+
+            <TextView
+                android:id="@+id/mahubePharmacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mahube"
+                android:textColor="@color/button_blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pharmacy"
+                android:textColor="#7AB648"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/CartIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@id/notificationIcon"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Cart"
+            android:clickable="true"
+            android:onClick="showCartPage"
+            android:tint="#64748B"
+            android:src="@drawable/shopping_cart" />
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Profile"
+            android:tint="#64748B"
+            android:src="@drawable/account_circle"
+            android:clickable="true"
+            android:onClick="showProfilePage"/>
+
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@id/profileIcon"
+            android:src="@android:drawable/ic_popup_reminder"
+            android:tint="#64748B"
+            android:contentDescription="Notifications" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Our Services Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/our_services"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/services_subtitle"
+                android:textColor="@color/secondary_textColor"
+                android:textSize="16sp" />
+
+            <!-- Service Cards Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <!-- Prescription Upload Card -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:onClick="showUploadPresciptionPage">
+
+                    <ImageView
+                        android:id="@+id/rxIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/edit_box"
+                        android:backgroundTint="#E8F5E9"
+                        android:padding="15dp"
+                        android:src="@android:drawable/ic_menu_edit"
+                        app:tint="#4CAF50"
+                        android:contentDescription="Prescription Icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/rxIcon"
+                        android:layout_toStartOf="@id/chevron1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/prescription_upload_title"
+                            android:textColor="#0F172A"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/prescription_upload_desc"
+                            android:textColor="@color/secondary_textColor"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/chevron1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#CBD5E1"
+                        android:contentDescription="Go to Prescription Upload" />
+                </RelativeLayout>
+
+                <!-- Consultation Card -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:onClick="showConsultationPage">
+
+                    <ImageView
+                        android:id="@+id/consultationIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/edit_box"
+                        android:backgroundTint="#E3F2FD"
+                        android:padding="15dp"
+                        android:src="@android:drawable/ic_menu_agenda"
+                        app:tint="#2196F3"
+                        android:contentDescription="Consultation Icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/consultationIcon"
+                        android:layout_toStartOf="@id/chevron2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/consultation_title"
+                            android:textColor="#0F172A"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/consultation_desc"
+                            android:textColor="@color/secondary_textColor"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/chevron2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#CBD5E1"
+                        android:contentDescription="Go to Consultation" />
+                </RelativeLayout>
+
+                <!-- Medication Reminder Card -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:id="@+id/reminderIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/edit_box"
+                        android:backgroundTint="#FFF8E1"
+                        android:padding="15dp"
+                        android:src="@android:drawable/ic_lock_idle_alarm"
+                        app:tint="#FFC107"
+                        android:contentDescription="Reminder Icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/reminderIcon"
+                        android:layout_toStartOf="@id/chevron3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/medication_reminder_title"
+                            android:textColor="#0F172A"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/medication_reminder_desc"
+                            android:textColor="@color/secondary_textColor"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/chevron3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#CBD5E1"
+                        android:contentDescription="Go to Medication Reminder" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/nav_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:outlineAmbientShadowColor="@color/black">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home" android:tint="#64748B"
+            android:onClick="showHomePage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Prescriptions"
+            android:tint="@color/black"
+            android:src="@drawable/ic_services"
+            android:onClick="showUploadPresciptionPage"/>
+
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Prescriptions"
+            android:src="@drawable/ic_prescriptions_item"
+            android:onClick="showUploadPresciptionPage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Consultation"
+            android:src="@drawable/ic_contact"
+            android:tint="#64748B"
+            android:onClick="showConsultationPage" />
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Profile"
+            android:src="@drawable/ic_profile"
+            android:tint="#64748B"
+            android:onClick="showProfilePage" />
+    </LinearLayout>
+</LinearLayout>

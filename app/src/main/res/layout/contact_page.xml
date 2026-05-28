@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Header Section (Same as dashboard) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/Icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_image"
+            android:contentDescription="@string/app_name"
+            android:clickable="true"
+            android:onClick="showHomePage" />
+
+        <LinearLayout
+            android:id="@+id/logoTextContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/Icon"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:onClick="showHomePage">
+
+            <TextView
+                android:id="@+id/mahubePharmacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mahube"
+                android:textColor="@color/button_blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pharmacy"
+                android:textColor="#7AB648"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="#64748B"
+            android:src="@drawable/account_circle"
+            android:contentDescription="Profile"
+            android:clickable="true"
+            android:onClick="showProfilePage"/>
+        <ImageView
+            android:id="@+id/CartIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@id/notificationIcon"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Cart"
+            android:clickable="true"
+            android:onClick="showCartPage"
+            app:tint="#64748B"
+            android:src="@drawable/shopping_cart" />
+
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@id/profileIcon"
+            android:src="@android:drawable/ic_popup_reminder"
+            app:tint="#64748B"
+            android:contentDescription="Notifications" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Redirecting standard contact to Consultation for now -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact &amp; Consult"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Go to Consultation"
+                android:onClick="showConsultationPage" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/nav_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:outlineAmbientShadowColor="@color/black">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home"
+            android:tint="@color/black"
+            android:onClick="showHomePage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Prescriptions"
+            android:src="@drawable/ic_prescriptions_item"
+            android:onClick="showUploadPresciptionPage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Cart"
+            android:src="@drawable/shopping_cart"
+            android:tint="@color/black"
+            android:onClick="showCartPage" />
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Consultation"
+            android:src="@drawable/ic_contact"
+            android:tint="@color/button_blue"
+            android:onClick="showConsultationPage" />
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Profile"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/black"
+            android:onClick="showProfilePage" />
+    </LinearLayout>
+</LinearLayout>
