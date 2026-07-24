@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC"
+    android:layout_marginTop="25dp">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Products"
+            android:textColor="#0F172A"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/allProductsCartIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_blue"
+            android:backgroundTint="#F1F5F9"
+            android:padding="8dp"
+            android:src="@drawable/shopping_cart"
+            app:tint="#64748B"
+            android:onClick="showCartPage" />
+    </RelativeLayout>
+
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/edit_box"
+        android:backgroundTint="@color/white"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="#94A3B8" />
+
+        <EditText
+            android:id="@+id/searchProductsInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/searchIcon"
+            android:background="@android:color/transparent"
+            android:hint="Search for products..."
+            android:paddingStart="10dp"
+            android:textSize="14sp"
+            android:inputType="text" />
+    </RelativeLayout>
+
+    <!-- Categories -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="15dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:id="@+id/Category">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="All"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="#F1F5F9"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="8dp"
+                android:text="Pain Relief"
+                android:textColor="#64748B"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="#F1F5F9"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="8dp"
+                android:text="Cold &amp; Flu"
+                android:textColor="#64748B"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="#F1F5F9"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="8dp"
+                android:text="Vitamins"
+                android:textColor="#64748B"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Products Recycler -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/allProductsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
+
+    <!-- Bottom Nav -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/nav_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:tint="#64748B"
+            android:onClick="showHomePage" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_services"
+            android:tint="#64748B"
+            android:onClick="showServicePage"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_prescriptions_item"
+            android:onClick="showUploadPresciptionPage" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_contact"
+            android:tint="#64748B"
+            android:onClick="showConsultationPage" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:tint="#64748B"
+            android:onClick="showAboutPage" />
+    </LinearLayout>
+</LinearLayout>

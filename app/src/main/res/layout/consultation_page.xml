@@ -136,6 +136,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
                 <EditText
+                    android:id="@+id/consultationName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -145,6 +146,26 @@
                     android:paddingHorizontal="15dp"
                     android:textSize="15sp"
                     android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Email Address"
+                    android:textColor="#64748B"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/consultationEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:hint="thabo@example.com"
+                    android:paddingHorizontal="15dp"
+                    android:textSize="15sp"
+                    android:inputType="textEmailAddress" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,6 +186,7 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <EditText
+                            android:id="@+id/consultationPhone"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="8dp"
@@ -195,6 +217,7 @@
                             android:backgroundTint="#F8FAFC"
                             android:paddingHorizontal="15dp">
                             <EditText
+                                android:id="@+id/consultationDate"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toStartOf="@+id/calIcon"
@@ -223,6 +246,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
                 <Spinner
+                    android:id="@+id/consultationType"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -238,6 +262,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
                 <EditText
+                    android:id="@+id/consultationDescription"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
@@ -261,8 +286,182 @@
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:onClick="submitConsultation" />
+
+                <!-- Booking Success Card -->
+                <LinearLayout
+                    android:id="@+id/consultationBookingSuccessCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F0FDF4"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/resBookingId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Success! Consultation ID: #123"
+                        android:textColor="#16A34A"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Save this ID to check your response below."
+                        android:textColor="#16A34A"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
+
+            <!-- Check Consultation Status Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/card_background"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Pharmacist Response"
+                    android:textColor="#1E40AF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Enter the Consultation ID you received after submitting your request."
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/checkConsultationId"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_box"
+                        android:backgroundTint="#F8FAFC"
+                        android:hint="Consultation ID"
+                        android:inputType="number"
+                        android:paddingHorizontal="15dp"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="#2DAB73"
+                        android:text="Check Status"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:onClick="checkConsultationStatus" />
+                </LinearLayout>
+
+                <!-- Result View (Hidden by default) -->
+                <LinearLayout
+                    android:id="@+id/consultationResultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/resConsultationId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consultation #1"
+                        android:textColor="#0F172A"
+                        android:textStyle="bold" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:columnCount="2">
+
+                        <TextView android:text="Full Name:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginEnd="20dp"/>
+                        <TextView android:id="@+id/resFullName" android:text="test" android:textColor="#64748B" />
+
+                        <TextView android:text="Type:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/resType" android:text="General Consultation" android:textColor="#64748B" android:layout_marginTop="5dp"/>
+
+                        <TextView android:text="Preferred Date:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/resDate" android:text="11 Jun 2026" android:textColor="#64748B" android:layout_marginTop="5dp"/>
+
+                        <TextView android:text="Your Question:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/resQuestion" android:text="..." android:textColor="#64748B" android:layout_marginTop="5dp"/>
+                    </GridLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="#DDDDDD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pharmacist's"
+                        android:textColor="#2DAB73"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Response:"
+                        android:textColor="#2DAB73"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/resResponse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Your consultation is booked for 13:00"
+                        android:textColor="#0F172A" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Consultation History Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Your Consultation History"
+                android:textColor="#0F172A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/consultationHistoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </LinearLayout>
     </ScrollView>
 
@@ -290,9 +489,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="Prescriptions"
-            android:tint="@color/black"
+            android:tint="#64748B"
             android:src="@drawable/ic_services"
-            android:onClick="showUploadPresciptionPage"/>
+            android:onClick="showServicePage"/>
 
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
@@ -323,6 +522,6 @@
             android:contentDescription="Profile"
             android:src="@drawable/ic_profile"
             android:tint="#64748B"
-            android:onClick="showProfilePage" />
+            android:onClick="showAboutPage" />
     </LinearLayout>
 </LinearLayout>

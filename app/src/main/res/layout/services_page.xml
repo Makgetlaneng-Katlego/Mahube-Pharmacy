@@ -333,9 +333,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="Prescriptions"
-            android:tint="@color/black"
+            android:tint="#64748B"
             android:src="@drawable/ic_services"
-            android:onClick="showUploadPresciptionPage"/>
+            android:onClick="showServicePage"/>
 
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
@@ -366,6 +366,6 @@
             android:contentDescription="Profile"
             android:src="@drawable/ic_profile"
             android:tint="#64748B"
-            android:onClick="showProfilePage" />
+            android:onClick="showAboutPage" />
     </LinearLayout>
 </LinearLayout>

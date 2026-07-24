@@ -289,6 +289,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/doctorName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -332,6 +333,7 @@
                             android:paddingHorizontal="15dp">
 
                             <EditText
+                                android:id="@+id/prescriptionDate"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toStartOf="@+id/calendarIcon"
@@ -370,6 +372,7 @@
                             android:textStyle="bold" />
 
                         <Spinner
+                            android:id="@+id/prescriptionType"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="8dp"
@@ -390,6 +393,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/additionalNotes"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
@@ -413,6 +417,153 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
+
+                <!-- Result View (Hidden by default) -->
+                <LinearLayout
+                    android:id="@+id/prescriptionResultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F0FDF4"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/resPrescriptionId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Success! Prescription ID: #123"
+                        android:textColor="#16A34A"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Please save this ID to check your status later."
+                        android:textColor="#16A34A"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Check Prescription Status Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="@color/white"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check Prescription Status"
+                        android:textColor="#1E40AF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/checkPrescriptionIdInput"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_box"
+                            android:backgroundTint="#F8FAFC"
+                            android:hint="Prescription ID"
+                            android:inputType="number"
+                            android:paddingHorizontal="15dp"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:backgroundTint="#2DAB73"
+                            android:text="Check"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:onClick="checkPrescriptionStatus" />
+                    </LinearLayout>
+
+                    <!-- Status Result View -->
+                    <LinearLayout
+                        android:id="@+id/prescriptionStatusCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_box"
+                        android:backgroundTint="#F8FAFC"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/statusPrescriptionId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Prescription #1"
+                            android:textColor="#0F172A"
+                            android:textStyle="bold" />
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:columnCount="2">
+
+                            <TextView android:text="Doctor:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginEnd="20dp"/>
+                            <TextView android:id="@+id/resDoctorName" android:text="..." android:textColor="#64748B" />
+
+                            <TextView android:text="Type:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                            <TextView android:id="@+id/resPrescriptionType" android:text="..." android:textColor="#64748B" android:layout_marginTop="5dp"/>
+
+                            <TextView android:text="Date:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                            <TextView android:id="@+id/resPrescriptionDate" android:text="..." android:textColor="#64748B" android:layout_marginTop="5dp"/>
+
+                            <TextView android:text="Notes:" android:textColor="#0F172A" android:textStyle="bold" android:layout_marginTop="5dp"/>
+                            <TextView android:id="@+id/resPrescriptionNotes" android:text="..." android:textColor="#64748B" android:layout_marginTop="5dp"/>
+                        </GridLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="10dp"
+                            android:background="#DDDDDD" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pharmacist's"
+                            android:textColor="#2DAB73"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Response:"
+                            android:textColor="#2DAB73"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/statusPrescriptionResponse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Processing your prescription..."
+                            android:textColor="#0F172A" />
+                    </LinearLayout>
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/submitPrescriptionBtn"
@@ -478,9 +629,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="Prescriptions"
-            android:tint="@color/black"
+            android:tint="#64748B"
             android:src="@drawable/ic_services"
-            android:onClick="showUploadPresciptionPage"/>
+            android:onClick="showServicePage"/>
 
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
@@ -511,6 +662,6 @@
             android:contentDescription="Profile"
             android:src="@drawable/ic_profile"
             android:tint="#64748B"
-            android:onClick="showProfilePage" />
+            android:onClick="showAboutPage" />
     </LinearLayout>
 </LinearLayout>

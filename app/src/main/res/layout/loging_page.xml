@@ -36,11 +36,13 @@
                 android:textSize="20sp"
                 android:textColor="@color/secondary_textColor"/>
             <EditText
+                android:id="@+id/loginEmail"
                 android:layout_marginStart="15dp"
                 android:layout_width="400dp"
                 android:layout_height="45dp"
                 android:background="@drawable/edit_box"
-                android:text="E.g Molefe@gmail.com"
+                android:hint="E.g Molefe@gmail.com"
+                android:inputType="textEmailAddress"
                 />
             <TextView
                 android:layout_marginTop="5dp"
@@ -50,10 +52,12 @@
                 android:layout_marginStart="15dp"
                 android:textSize="20sp"/>
             <EditText
+                android:id="@+id/loginPassword"
                 android:layout_width="400dp"
                 android:layout_height="45dp"
                 android:background="@drawable/edit_box"
-                android:text="*******"
+                android:hint="*******"
+                android:inputType="textPassword"
                 android:layout_marginStart="15dp"/>
             <Button
                 android:id="@+id/SigningBtn"
@@ -64,22 +68,23 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:onClick="showHomePage"/>
+                android:onClick="handleLogin"/>
             <Button
                 android:layout_width="275dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:text="Create Account"
                 android:layout_marginTop="10dp"
+                android:onClick="CreateUser"
                 android:background="@drawable/sign_in_btn"
-                android:onClick="showCreateAccountPage"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Forgot Password, reset password"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                />
 
 
 

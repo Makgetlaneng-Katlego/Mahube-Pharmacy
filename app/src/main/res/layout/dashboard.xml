@@ -173,318 +173,27 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/seeAllproducts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:text="@string/see_all"
                     android:textColor="@color/button_blue"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:onClick="showProductsPage" />
             </RelativeLayout>
 
             <!-- Products Grid -->
-            <GridLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productsRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:padding="10dp"
-                android:useDefaultMargins="true">
-
-                <!-- First Aid Kit -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/first_aid_kit"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_150"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="first_aid_kit"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-                <!-- Burns Cream -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/burns_cream"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_85"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="burns_cream"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-                <!-- Grand-Pa -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/grand_pa"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_45"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="grand_pa"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-                <!-- Vitamin C -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/vitamin_c"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_120"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="vitamin_c"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-                <!-- Vicks Syrup -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/vicks_syrup"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_65"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="vicks_syrup"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-                <!-- Paracetamol -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/edit_box"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/icon_image" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/paracetamol"
-                        android:textColor="#0F172A"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/price_35"
-                        android:textColor="#7AB648"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/sign_in_btn"
-                        android:padding="0dp"
-                        android:text="@string/add_to_cart"
-                        android:textAllCaps="false"
-                        android:textColor="@color/button_blue"
-                        android:textSize="12sp"
-                        android:tag="paracetamol"
-                        android:onClick="addToCart" />
-                </LinearLayout>
-
-            </GridLayout>
+                android:padding="5dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -510,9 +219,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="Prescriptions"
-            android:tint="@color/black"
+            android:tint="#64748B"
             android:src="@drawable/ic_services"
-            android:onClick="showUploadPresciptionPage"/>
+            android:onClick="showServicePage"/>
 
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
@@ -543,6 +252,6 @@
             android:contentDescription="Profile"
             android:src="@drawable/ic_profile"
             android:tint="#64748B"
-            android:onClick="showProfilePage" />
+            android:onClick="showAboutPage" />
     </LinearLayout>
 </LinearLayout>

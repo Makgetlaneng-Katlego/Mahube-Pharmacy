@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC"
+    android:layout_marginTop="25dp">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/icon_image"
+            android:onClick="showHomePage" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/logoIcon"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAHUBE"
+                android:textColor="#1E40AF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHARMACY"
+                android:textColor="#7AB648"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/account_circle"
+            app:tint="#64748B"
+            android:onClick="showProfilePage" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@id/profileIcon"
+            android:src="@android:drawable/ic_popup_reminder"
+            app:tint="#64748B" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Title and Back -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_blue"
+                    android:backgroundTint="#F1F5F9"
+                    android:padding="10dp"
+                    android:src="@drawable/back_arrow"
+                    app:tint="#0F172A"
+                    android:onClick="handleAddressBack" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@id/backBtn"
+                    android:text="Add Address"
+                    android:textColor="#0F172A"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#EFF6FF"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="1 of 1"
+                    android:textColor="#1E40AF"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <!-- Saved Addresses Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:drawableStart="@android:drawable/ic_menu_agenda"
+                android:drawablePadding="10dp"
+                android:text="Saved Addresses"
+                android:textColor="#1E40AF"
+                android:textStyle="bold"
+                app:drawableTint="#1E40AF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/homeIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_blue"
+                        android:backgroundTint="#EFF6FF"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_home"
+                        app:tint="#1E40AF" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/homeIcon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Home"
+                            android:textColor="#0F172A"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="123 Main Street, Riviera, Pretoria, 0083"
+                            android:textColor="#64748B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/edit_box"
+                            android:backgroundTint="#F0FDF4"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"
+                            android:text="Default"
+                            android:textColor="#16A34A"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#CBD5E1" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- New Address Form -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_box"
+                android:backgroundTint="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_mylocation"
+                    android:drawablePadding="10dp"
+                    android:text="New Address"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold"
+                    app:drawableTint="#1E40AF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Fill in the details below to add a new delivery address."
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
+
+                <!-- Fields -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Address Name *"
+                    android:textColor="#64748B"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/addressName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:drawableStart="@android:drawable/ic_menu_send"
+                    android:drawablePadding="10dp"
+                    android:hint="e.g. Home, Work, Cottage"
+                    android:paddingHorizontal="15dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Street Address *"
+                    android:textColor="#64748B"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/streetAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:drawableStart="@android:drawable/ic_dialog_map"
+                    android:drawablePadding="10dp"
+                    android:hint="123 Main Street"
+                    android:paddingHorizontal="15dp"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City *"
+                            android:textColor="#64748B"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/edit_box"
+                            android:backgroundTint="#F8FAFC"
+                            android:hint="Pretoria"
+                            android:paddingHorizontal="15dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Province *"
+                            android:textColor="#64748B"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <Spinner
+                            android:id="@+id/provinceSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/edit_box"
+                            android:backgroundTint="#F8FAFC" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Postal Code *"
+                    android:textColor="#64748B"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/postalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:hint="0083"
+                    android:inputType="number"
+                    android:paddingHorizontal="15dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Delivery Instructions (optional)"
+                    android:textColor="#64748B"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/deliveryInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_box"
+                    android:backgroundTint="#F8FAFC"
+                    android:gravity="top"
+                    android:hint="e.g. Leave at the gate..."
+                    android:padding="15dp"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/defaultAddressCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Set as default delivery address"
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/saveAddressBtn"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_background"
+                android:drawableStart="@android:drawable/ic_menu_save"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="30dp"
+                android:text="Save Address"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:onClick="saveAddress" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:drawableStart="@android:drawable/ic_lock_lock"
+                android:drawablePadding="8dp"
+                android:text="Your address information is secure and encrypted."
+                android:textColor="#94A3B8"
+                android:textSize="11sp"
+                app:drawableTint="#94A3B8" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

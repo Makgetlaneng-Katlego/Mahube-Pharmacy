@@ -133,6 +133,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/profileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_name"
@@ -141,6 +142,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/profileEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
@@ -148,31 +150,7 @@
                         android:textColor="@color/secondary_textColor"
                         android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/verified_badge_bg"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="4dp">
 
-                        <ImageView
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:src="@android:drawable/checkbox_on_background"
-                            app:tint="@color/verified_green_text" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:text="@string/verified"
-                            android:textColor="@color/verified_green_text"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
                 </LinearLayout>
 
                 <ImageView
@@ -182,7 +160,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@android:drawable/ic_media_play"
-                    app:tint="#CBD5E1" />
+                    android:tint="#CBD5E1" />
             </RelativeLayout>
 
             <!-- Menu List -->
@@ -191,24 +169,64 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="@color/white"
+                    android:elevation="1dp"
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="showAddressPage">
+
+                    <ImageView
+                        android:id="@+id/AddressIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_home"
+                        android:tint="@color/button_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/AddressIcon"
+                        android:text="User Address"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        android:tint="#CBD5E1" />
+                </RelativeLayout>
 
                 <!-- Order History -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/edit_box"
+                    android:background="@drawable/card_background"
                     android:backgroundTint="@color/white"
                     android:elevation="1dp"
-                    android:padding="15dp">
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="showOrderHistoryPage">
 
                     <ImageView
                         android:id="@+id/historyIcon"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_menu_agenda"
-                        app:tint="@color/button_blue"
-                        tools:ignore="UseAppTint" />
+                        android:tint="@color/button_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -235,7 +253,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/edit_box"
+                    android:background="@drawable/card_background"
                     android:backgroundTint="@color/white"
                     android:elevation="1dp"
                     android:padding="15dp">
@@ -245,7 +263,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_menu_view"
-                        app:tint="@color/button_blue" />
+                        android:tint="@color/button_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -272,7 +290,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/edit_box"
+                    android:background="@drawable/card_background"
                     android:backgroundTint="@color/white"
                     android:elevation="1dp"
                     android:padding="15dp">
@@ -282,7 +300,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@android:drawable/ic_popup_reminder"
-                        app:tint="@color/button_blue" />
+                        android:tint="@color/button_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -309,7 +327,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/edit_box"
+                    android:background="@drawable/card_background"
                     android:backgroundTint="@color/white"
                     android:elevation="1dp"
                     android:padding="15dp">
@@ -348,7 +366,10 @@
                     android:layout_height="45dp"
                     android:background="@drawable/log_button"
                     android:text="Log out"
-                    android:textColor="@color/logout_red"/>
+                    android:id="@+id/logOutBtn"
+                    android:textColor="@color/logout_red"
+                    android:clickable="true"
+                    android:onClick="showLoggingPage"/>
 
         </LinearLayout>
     </ScrollView>

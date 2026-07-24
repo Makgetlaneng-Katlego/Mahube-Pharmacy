@@ -244,9 +244,19 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="Home"
-            android:src="@drawable/ic_home"
-            android:tint="@color/black"
+            android:src="@drawable/ic_home" android:tint="#64748B"
             android:onClick="showHomePage"/>
+        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="Prescriptions"
+            android:tint="#64748B"
+            android:src="@drawable/ic_services"
+            android:onClick="showServicePage"/>
+
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
             android:layout_width="0dp"
@@ -262,19 +272,9 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:clickable="true"
-            android:contentDescription="Cart"
-            android:src="@drawable/shopping_cart"
-            android:tint="@color/black"
-            android:onClick="showCartPage" />
-        <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
             android:contentDescription="Consultation"
             android:src="@drawable/ic_contact"
-            android:tint="@color/black"
+            android:tint="#64748B"
             android:onClick="showConsultationPage" />
         <TextView android:layout_width="1dp" android:layout_height="25dp" android:background="#DDDDDD" />
         <ImageView
@@ -285,7 +285,7 @@
             android:clickable="true"
             android:contentDescription="Profile"
             android:src="@drawable/ic_profile"
-            android:tint="@color/black"
-            android:onClick="showProfilePage" />
+            android:tint="#64748B"
+            android:onClick="showAboutPage" />
     </LinearLayout>
 </LinearLayout>

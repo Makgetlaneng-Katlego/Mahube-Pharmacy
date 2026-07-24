@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:paddingHorizontal="15dp">
 
         <ImageView
@@ -19,8 +19,9 @@
             android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_logo_box"
-            android:contentDescription="@string/app_name" />
+            android:src="@drawable/back_arrow"
+            android:contentDescription="@string/app_name"
+            android:onClick="showLoggingPage"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@id/logoIcon"
-            android:layout_toStartOf="@+id/headerProfile"
+            android:layout_toLeftOf="@id/logoIcon"
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
 
@@ -48,18 +49,6 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/headerProfile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/account_circle"
-            app:tint="#64748B"
-            android:contentDescription="Profile"
-            android:clickable="true"
-            android:onClick="showProfilePage" />
     </RelativeLayout>
 
     <ScrollView
@@ -75,10 +64,10 @@
             android:padding="24dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="380dp"
+                android:layout_height="190dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_add_circle" />
+                android:src="@drawable/app_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,6 +113,7 @@
                     app:tint="#64748B" />
 
                 <EditText
+                    android:id="@+id/fullname"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/userIcon"
@@ -161,6 +151,7 @@
                     android:src="@drawable/ic_email" />
 
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/emailIcon"
@@ -198,6 +189,7 @@
                     android:src="@drawable/ic_phone" />
 
                 <EditText
+                    android:id="@+id/phoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/phoneIcon"
@@ -235,6 +227,7 @@
                     android:src="@drawable/ic_lock" />
 
                 <EditText
+                    android:id="@+id/Pass"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/passIcon"
@@ -272,6 +265,7 @@
                     android:src="@drawable/ic_lock" />
 
                 <EditText
+                    android:id="@+id/Confirmpass"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/confirmPassIcon"
@@ -291,6 +285,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <CheckBox
+                    android:id="@+id/termsCheckbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="32dp"
@@ -302,10 +297,21 @@
                     android:text="@string/terms_agreement"
                     android:textColor="#64748B"
                     android:textSize="13sp" />
+
             </LinearLayout>
+            <TextView
+                android:id="@+id/Response"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/logout_red"
+                android:text=""
+                android:textSize="13sp" />
 
             <!-- Create Account Button -->
             <Button
+                android:id="@+id/createUser"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"
@@ -319,7 +325,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:onClick="showHomePage" />
+                android:onClick="acceptUserName" />
 
         </LinearLayout>
     </ScrollView>
