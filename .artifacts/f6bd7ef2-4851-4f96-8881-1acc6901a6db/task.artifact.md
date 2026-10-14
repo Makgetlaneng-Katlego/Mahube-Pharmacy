@@ -1,0 +1,5 @@
+- [x] Research existing hashing implementation
+- [x] Create implementation plan
+- [/] Implement prefix normalization in `DBConnection.kt`
+- [ ] Verify changes
+- [ ] Create walkthrough
