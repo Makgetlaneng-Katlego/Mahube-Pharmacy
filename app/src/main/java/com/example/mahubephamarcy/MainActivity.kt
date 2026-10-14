@@ -2,6 +2,7 @@
 
     import android.R.attr.value
     import android.content.Intent
+    import android.graphics.drawable.Drawable
     import android.net.Uri
     import android.os.Bundle
     import android.util.Log
@@ -16,14 +17,15 @@
     import androidx.activity.ComponentActivity
     import androidx.activity.enableEdgeToEdge
     import androidx.activity.result.contract.ActivityResultContracts
+    import androidx.appcompat.content.res.AppCompatResources
     import androidx.work.Data
     import androidx.work.ExistingPeriodicWorkPolicy
     import androidx.work.PeriodicWorkRequestBuilder
     import androidx.work.WorkManager
     import retrofit2.Retrofit
     import retrofit2.converter.gson.GsonConverterFactory
-    import com.example.mahubephamarcy.R.id.createUser
-    import com.example.mahubephamarcy.R.id.createUser
+    //import com.example.mahubephamarcy.R.id.createUser
+    //import com.example.mahubephamarcy.R.id.createUser
     import com.example.mahubephamarcy.R.id.logOutBtn
     import org.jetbrains.annotations.MustBeInvokedByOverriders
     import java.net.InetAddress
@@ -348,6 +350,26 @@
 
         fun showCreateAccountPage(view: View) {
             setContentView(R.layout.create_account)
+            val FullnameEditText = view.findViewById<EditText>(R.id.fullname)
+            val profileDrawable: Drawable = AppCompatResources.getDrawable(
+                this,
+                R.drawable.ic_profile
+            )!!
+            FullnameEditText.setCompoundDrawablesWithIntrinsicBounds(profileDrawable,null,null,null)
+            val emailEditText = view.findViewById<EditText>(R.id.email)
+            val emailDrawable: Drawable = AppCompatResources.getDrawable(this,R.drawable.ic_email)!!
+            emailEditText.setCompoundDrawablesWithIntrinsicBounds(emailDrawable,null,null,null)
+            val phoneNumberEditText = view.findViewById<EditText>(R.id.phone)
+            val phoneDrawable: Drawable = AppCompatResources.getDrawable(this,R.drawable.ic_phone)!!
+            phoneNumberEditText.setCompoundDrawablesWithIntrinsicBounds(phoneDrawable,null,null,null)
+            val LockIcon: Drawable = AppCompatResources.getDrawable(this,R.drawable.ic_lock)!!
+            val passEditText = view.findViewById<EditText>(R.id.Pass)
+            passEditText.setCompoundDrawables(LockIcon,null,null,null)
+            val confirmPassEditText = view.findViewById<EditText>(R.id.Confirmpass)
+            confirmPassEditText.setCompoundDrawables(LockIcon,null,null,null)
+            val DOBEditText: EditText = view.findViewById(R.id.DOB)
+            val DOBIcon: Drawable = AppCompatResources.getDrawable(this,R.drawable.outline_calendar_month_24)!!
+            DOBEditText.setCompoundDrawables(DOBIcon,null,null,null)
         }
 
         fun addToCart(view: View) {
@@ -679,7 +701,7 @@
             setContentView(R.layout.create_account)
         }
 
-        fun acceptUserName(view: View){
+    /*    fun acceptUserName(view: View){
             val fullName = findViewById<EditText>(R.id.fullname).text.toString()
             val email = findViewById<EditText>(R.id.email).text.toString()
             val phoneNumber = findViewById<EditText>(R.id.phoneNumber).text.toString()
@@ -708,7 +730,7 @@
             } else {
                 response.text = validation
             }
-        }
+        }*/
 
         fun validateUserInputs(fullname: String, email: String, numberBnr: String, pass: String, confirmPass: String, isTermsChecked: Boolean): String {
             if(fullname.isEmpty()) return "Please Enter your name"

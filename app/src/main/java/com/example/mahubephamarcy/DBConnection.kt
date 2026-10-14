@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.Toast
 import com.example.mahubephamarcy.MainActivity.Order
 import com.example.mahubephamarcy.MainActivity.OrderItem
-import org.mindrot.jbcrypt.BCrypt
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
@@ -13,7 +12,7 @@ import kotlin.collections.forEach
 
 class DBConnection {
     private val TAG = "DBConnection"
-    private val dbHost = "192.168.1.18"
+    private val dbHost = "10.73.233.233"
     private val dbConnectionURL = "jdbc:mysql://$dbHost:3307/pharmacy?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
     private val dbUser = "Android_app"
     private val dbPassword = "K@ts1234"
@@ -32,9 +31,8 @@ class DBConnection {
             statement.setString(2, email)
             statement.setString(3, phoneNumber)
             
-            // Hash the password before saving
-            val hashedPass = BCrypt.hashpw(pass, BCrypt.gensalt())
-            statement.setString(4, hashedPass)
+            // Store password in plain text
+            statement.setString(4, pass)
             
             statement.setString(5, "customer")
             
@@ -75,8 +73,8 @@ class DBConnection {
             if (resultSet.next()) {
                 val storedHash = resultSet.getString("password")
                 
-                // Verify the password against the hash
-                if (BCrypt.checkpw(pass, storedHash)) {
+                // Verify the password (plain text comparison)
+                if (pass == storedHash) {
                     Log.d(TAG, "Login successful for: $email")
                     return MainActivity.User(
                         id = resultSet.getInt("user_id"),

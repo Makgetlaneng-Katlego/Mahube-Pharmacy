@@ -1,5 +1,6 @@
-- [x] Research existing hashing implementation
-- [x] Create implementation plan
-- [/] Implement prefix normalization in `DBConnection.kt`
-- [ ] Verify changes
-- [ ] Create walkthrough
+- [x] Remove password hashing from `DBConnection.kt`
+    - [x] Remove `jbcrypt` import
+    - [x] Update `insertUserTable` to store plain text passwords
+    - [x] Update `verifyUser` to use direct string comparison
+- [x] Verify changes
+- [x] Create walkthrough
