@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Regular (Normal weight) -->
+    <font
+        android:font="@font/playfair_display_regular"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+    <!-- Italic (Normal weight) -->
+    <font
+        android:font="@font/playfair_display_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+
+    <!-- Bold (Heavy weight) -->
+    <font
+        android:font="@font/playfair_display_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+
+    <!-- Bold Italic (Heavy weight) -->
+    <font
+        android:font="@font/playfair_display_bolditalic"
+        android:fontStyle="italic"
+        android:fontWeight="700" />
+
+</font-family>
